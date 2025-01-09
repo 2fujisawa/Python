@@ -23,3 +23,14 @@ else:
     print("Invalid input")
 
 #Loops(for and while)
+for i in range(3): #prints 0 to 2 through iteration
+    print(i)
+for l in "printing": #prints each letter in Linus
+    print(l, end="")
+print()
+
+length = "Length of the while loop"
+count = 0
+while count < len(length):
+    print(length[count], end="")
+    count += 1
