@@ -34,3 +34,22 @@ count = 0
 while count < len(length):
     print(length[count], end="")
     count += 1
+
+#Core Data Structures used in Python
+
+#Lists
+test_list1 = [1,"This element is being accessed",True,3.1415] #creating list
+print(test_list1)
+print(test_list1[1]) #accessing elemnts in list(remember it start from the 0 )
+
+test_list1.append("final element") #adding element to end of list
+test_list1.insert(1,"inserted element") #inserting element at index 1
+print(test_list1)
+
+popped_variable = test_list1.pop() # removes the the last element and creates a return value
+test_list1.remove("This element is being accessed") #removes whatever gets defined in the parenthesis, Remember you cannot index using .remove method, you must use pop
+print(test_list1)
+
+test_list2 = []
+test_list2.append(popped_variable) #appends the last element in the list as it was popped
+print(test_list2)
