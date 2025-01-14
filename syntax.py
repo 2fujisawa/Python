@@ -1,7 +1,4 @@
-#THIS IS JUST A SPACE FOR ME TO LEARN GENERAL PYTHON SYNTAX 
-print("Welcome to my Python Syntax Learning Space")
-
-#BASIC SYNTAX
+#THIS IS JUST A SPACE FOR ME TO LEARN GENERAL PYTHON SYNTAX AND TO PRACTICE MY CODING SKILLS
 
 #Variables and Data Types
 def variables_datatypes():
@@ -62,44 +59,65 @@ def list_syntax(user_list):
     test_list2.append(popped_variable) #appends the last element in the list as it was popped
     print(test_list2, " - popped element")
 
-#tuples 
-names = ("Linus", "jacob") #tuples are immutable, meaning you cannot change the values in them
-our_numbers = "2", "24" #you can create tuples without the parenthesis
-print(names, our_numbers, our_numbers[1:]) # the last portion just slices the tuple from index 1 to the end
+#tuples - immutable, meaning you cannot change the values in them
+def tuples():
+    names = ("Linus", "jacob") 
+    our_numbers = "2", "24" #you can create tuples without the parenthesis
+    print("Your tupes are ", names, " with numbers", our_numbers, " and we sliced through index 1 to the end:", our_numbers[1:]) 
 
-#Dictionaries
-empty_dict = {} #creating empty dictionary
-family = {"Mom": "Akiko", "Dad": "Ted", "Older Brother": "John", "Friend": "Sean"} #creating dictionary
-print(family["Mom"]) #you can access the value of the key this way as well however if there is no key it will throw an error
-print(family.get("Mom")) #second method to accessing the value of a key, this will return None if the key does not exist
+#Dictionaries - unordered collection of data in key:value pairs
+def dictionaries():
+    empty_dict = {} #creating empty dictionary
+    school = {"GPA": 4.0, "Degree": "Computer Science", "Favorite Language": "Python", "Future": "computers"} #creating dictionary
+    print("The highest score gpa you can get in school is", school["GPA"]) #you can access the value of the key this way as well however if there is no key it will throw an error
+    print("My favorite coding language is", school.get("Favorite Language")) #second method to accessing the value of a key, this will return None if the key does not exist
 
-family["Friend"] = "Jacob" #changing the value of a key
-print(family.get("Friend"))
+    school["Future"] = "AI" #changing the value of a key
+    print("The future of technology is changing to",school.get("Future"))
 
-#Sets - unordered collection of unique items - They are good for mathematical operations like union, intersection, difference, and symmetric difference
-empty_set = set() #creating empty set
-fruits = {"apple", "banana", "orange", "apple"} #creating set
-print(fruits) #second apple is not printed because sets do not allow duplicates
+#Sets - unordered collection of unique elements
+def sets():
+    empty_set = set() #creating empty set
+    cars = {"Lambo", "Ferrari", "Rolls Royce", "Bently", "Bently"} #creating set
+    print("You cannot have duplicate values in sets", cars)  #
 
-fruits.add("grape") #adding element to set
-fruits.update(["grape","mango"])# to add multiple items
-fruits.remove("banana") #removing element from set
-
-print(fruits)
-
-
+    cars.add("Mclaren") #adding element to set
+    cars.update(["Tesla","Porsche"])# to add multiple items
+    cars.remove("Tesla") #removing element from set
+    print("Some set cars you might want in the future are", cars)
 
 
-menu = int(input("Please enter a number for the topic you want to output: ")) #have to convert to integer to correctly process the string
-if (menu == 1):
-    print("Variables and Data Types")
-    variables_datatypes()
-elif (menu == 2):
-    print("Control Structures")
-    control_structures()
-elif (menu == 3):
-    print("List Syntax")
-    user_input = input("Enter a list of elements separated by commas: ")
-    user_list = user_input.split(",") #splitting user input into a list
-    print("Your list is: ", user_list)
-    list_syntax(user_list)
+def main():
+    while True:
+        menu = int(input("Please enter a number for the topic you want to output: \n1.Variables and DataTypes \n2.Control Sturctures\n3.Lists\n4.Tuples\n5.Dictionaries\n6.Sets\n7.Stop Script\n")) #have to convert to integer to correctly process the string
+        if (menu == 1):
+            print("Welcome to Variables and Data Types!")
+            variables_datatypes()
+        elif (menu == 2):
+            print("Welcome to Control Structures!")
+            control_structures()
+        elif (menu == 3):
+            print("Welcome to Lists!")
+            user_input = input("Enter a list of elements separated by commas: ")
+            user_list = user_input.split(",") #splitting user input into a list
+            print("Your list is: ", user_list)
+            list_syntax(user_list)
+        elif(menu == 4):
+            print("Welcome to Tuples!")
+            tuples()
+        elif(menu == 5):
+            print("Welcome to Dictionaries!")
+            dictionaries()
+        elif(menu == 6):
+            print("Welcome to Sets!")
+            sets()
+        elif(menu == 7):
+            print("Goodbye!")
+            break # break the loop closing program
+        else: 
+            print("Invalid input")
+            continue # this is will restart the look until a valid input is entered
+        
+
+if __name__ == "__main__":
+    main() #calling the main function
