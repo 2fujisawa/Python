@@ -1,24 +1,9 @@
-'''
-Nodes 
-        - building blocks of many computer science data structures
-        - Individual nodes contains data and links to other nodes
-        - Each data structure adds additional constraints or behavior to these features to create the desired data structure
-Node implementations
-        - The data type of the data contained in the node is not specified and can be any valid Python data type ("int", "str", "float", "list", "null")
-        - Link or links within the node ar esometimes referred to as pointers(because they point to another node)
-        - If these links are null it means you have readhed the end of the node chain
-
-Node Linking
-        - Nodes can be linked together to a single other node forming  
-        - When removed from the chain, the node is no longer accessible making it an orphan node
-'''
-
 #Big O Notation
 '''
 Describes the upper bound of an algorithm in terms of time(measures time an algorithm takes to complete) or space complexity(amount of memeory used), understanding how an algorithm  sclaes with input size
         -Big-O notation is used to describe the worst-case scenario for an algorithm
 
-        Big-O Complexities:
+        Big-O Time Complexities:
         1. O(1) | Constant Time - Ex. Accessing an element in an array by index
         2. O(log n) | Logarithmic Time - Ex. Binary search
         3. O(n) | Linear Time - Ex. Traversing an array/list
@@ -40,7 +25,7 @@ Describes the upper bound of an algorithm in terms of time(measures time an algo
 def constant_time(array):
     return array[0] #O(1) - Constant Time as only returns the first element in the array
 
-def logaritmic_time(array, target_value): # we will be doing a binary search
+def logarithmic_time(array, target_value): # we will be doing a binary search
         Lowest = 0
         Highest = len(array) - 1
 
@@ -61,7 +46,7 @@ def linear_time(array):
     for element in array: #O(n) - Linear Time as it traverses the entire array
         print(element) 
 
-    
+
 def main():
 #Constant Time
     array = [1,2,3,4,5,6]
@@ -69,7 +54,7 @@ def main():
 
 #Logarithmic Time
     target_value = 3
-    print("The index for the target value is", logaritmic_time(array, target_value))
+    print("The index for the target value is", logarithmic_time(array, target_value))
 
 #Linear Time
     linear_time(array) # if you use the print statement in the function you will see the elements printed out with a none value at the end as its not returning anything 
