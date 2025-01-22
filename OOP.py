@@ -23,11 +23,11 @@ Inhertiance - Mechanism to define a new class based on an existing class
 
 class Student(Person): #Student class inherits from Person class
     def __init__(self,name, age, is_student, student_id):
-        self.sudent_id = student_id
+        self.student_id = student_id
         super().__init__(name, age, is_student) #super() method is used here to call in the constuctor of the person class so you dont have to redefine the instance variables
 
     def greet_as_student(self):
-        return(f"{self.greet()} My student id is {self.sudent_id}") #greet has () since it is a method
+        return(f"{self.greet()} My student id is {self.student_id}") #greet has () since it is a method
 
 
 
